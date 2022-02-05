@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: merlich <merlich@student.21-school.ru>     +#+  +:+       +#+         #
+#    By: merlich <merlich@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/09 18:20:29 by merlich           #+#    #+#              #
-#    Updated: 2021/11/15 20:12:19 by merlich          ###   ########.fr        #
+#    Updated: 2022/02/05 15:55:01 by merlich          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,31 +20,29 @@ SRCS		=	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c \
 				ft_atoi.c ft_calloc.c ft_strdup.c ft_substr.c \
 				ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c \
 				ft_strmapi.c ft_striteri.c ft_putchar_fd.c \
-				ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
-
-SRCS_BONUS 	= 	ft_lstnew_bonus.c ft_lstadd_front_bonus.c \
+				ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
+				ft_lstnew_bonus.c ft_lstadd_front_bonus.c \
 				ft_lstsize_bonus.c \
 				ft_lstlast_bonus.c ft_lstadd_back_bonus.c \
 				ft_lstdelone_bonus.c ft_lstclear_bonus.c \
 				ft_lstiter_bonus.c ft_lstmap_bonus.c
 
-D_FILES		=	${SRCS:.c=.d} ${SRCS_BONUS:.c=.d}
+OBJS_ADDR = objs/
+
+OBJS	=	$(addprefix ${OBJS_ADDR}, ${SRCS:.c=.o})
+
+D_FILES		=	${OBJS:.o=.d}
 
 HEADER 		= 	libft.h
 
-OBJS 		= 	${SRCS:.c=.o}
-
-OBJS_BONUS 	= 	${SRCS_BONUS:.c=.o}
-
-BONUS 		= 	bonus
-
 CLANG 		= 	clang
 
-CFLAGS 		= 	-Wall -Wextra -Werror -MD
+CFLAGS 		= 	-Wall -Wextra -Werror -g -MD
 
 RM 			= 	rm -f
 
-%.o:		%.c
+${OBJS_ADDR}%.o:	%.c
+			mkdir -p ${OBJS_ADDR}
 			${CLANG} ${CFLAGS} -c $< -o $@
 
 all:		${NAME}
@@ -54,15 +52,13 @@ $(NAME): 	${OBJS}
 
 -include $(D_FILES)
 
-$(BONUS):	
-			@make OBJS="${OBJS_BONUS}" all
-
 clean:		
-			${RM} ${OBJS} ${OBJS_BONUS} ${D_FILES}
+			${RM} ${OBJS}
+			${RM} ${D_FILES}
 
 fclean:		clean
 			${RM} ${NAME}
 
 re:			fclean all
 
-.PHONY:		all clean fclean re bonus
+.PHONY:		all clean fclean re

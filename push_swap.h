@@ -6,7 +6,7 @@
 /*   By: merlich <merlich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 20:39:58 by merlich           #+#    #+#             */
-/*   Updated: 2022/01/24 22:27:56 by merlich          ###   ########.fr       */
+/*   Updated: 2022/02/05 18:11:35 by merlich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,52 @@
 # include <stdlib.h>
 # include "./libft/libft.h"
 
-typedef struct  int_stack
+# define TYPE int
+# define INIT_SIZE 10
+# define MULTIPLIER 2
+# define STACK_OVERFLOW -100
+# define STACK_UNDERFLOW -101
+# define OUT_OF_MEMORY -102
+
+typedef struct	s_stack
 {
+	TYPE			value;
+	int				score_b_r;
+	int				score_b_rr;
+	int				score_a_r;
+	int				score_a_rr;
+	struct s_stack	*next;
+}	t_stack;
 
-}   stack_t;
+void		ft_push(t_stack **head, TYPE value);
+TYPE		ft_pop(t_stack **head);
+TYPE		ft_peak(const t_stack *head);
+void		ft_print_stack(const t_stack *head);
+void		ft_delete_stack(t_stack **head);
+int			ft_stack_size(t_stack *lst);
+t_stack		*ft_stack_last(t_stack *lst);
+t_stack		*ft_stack_last_but_one(t_stack *lst);
+void		ft_check_isdigits(int argc, char **argv);
+void		ft_check_duplicates(t_stack **head);
+void    	ft_error_msg(void);
 
+void		ft_sa(t_stack **head_a);
+void		ft_sb(t_stack **head_b);
+void		ft_ss(t_stack **head_a, t_stack **head_b);
+void		ft_pa(t_stack **head_a, t_stack **head_b);
+void		ft_pb(t_stack **head_b, t_stack **head_a);
+void		ft_ra(t_stack **head_a)
+void		ft_rb(t_stack **head_b)
+void		ft_rr(t_stack **head_a, t_stack **head_b);
+void		ft_rra(t_stack **head_a);
+void		ft_rrb(t_stack **head_b);
+void		ft_rrr(t_stack **head_a, t_stack **head_b);
 
+int			ft_is_sorted(t_stack *head);
+int			ft_is_finally_sorted(t_stack *head);
 
-
-
-
+int			ft_find_max(t_stack *head);
+int			ft_find_min(t_stack *head);
 
 
 # endif
