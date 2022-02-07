@@ -6,7 +6,7 @@
 /*   By: merlich <merlich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 21:05:33 by merlich           #+#    #+#             */
-/*   Updated: 2022/02/05 18:07:21 by merlich          ###   ########.fr       */
+/*   Updated: 2022/02/07 21:43:55 by merlich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ft_ra(t_stack **head_a)
 	first->next = NULL;
 	last->next = first;
 	*head_a = second;
-	write(1, "ra\n", 2);
+	write(1, "ra\n", 3);
 }
 
 void	ft_rb(t_stack **head_b)
@@ -39,12 +39,12 @@ void	ft_rb(t_stack **head_b)
 	first->next = NULL;
 	last->next = first;
 	*head_b = second;
-	write(1, "rb\n", 2);
+	write(1, "rb\n", 3);
 }
 
 void	ft_rr(t_stack **head_a, t_stack **head_b)
 {
-	ft_rotate(head_a);
-	ft_rotate(head_b);
-	write(1, "rr\n", 2);
+	ft_ra(head_a);
+	ft_rb(head_b);
+	write(1, "rr\n", 3);
 }

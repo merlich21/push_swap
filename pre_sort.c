@@ -6,7 +6,7 @@
 /*   By: merlich <merlich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/05 15:36:25 by merlich           #+#    #+#             */
-/*   Updated: 2022/02/05 17:46:29 by merlich          ###   ########.fr       */
+/*   Updated: 2022/02/07 23:39:11 by merlich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,34 +39,57 @@ int	ft_is_sorted(t_stack *head)
 	return (1);
 }
 
-int	ft_find_max(t_stack *head)
+t_stack	*ft_find_max(t_stack *head)
 {
-	int	max;
+	t_stack	*max;
 
 	if (!head)
-		return (0);
-	max = head->value;
+		return (NULL);
+	max = head;
 	while (head->next)
 	{
-		if (max < head->next->value)
-			max = head->next->value;
+		if (max->value < head->next->value)
+			max = head->next;
 		head = head->next;
 	}
 	return (max);
 }
 
-int	ft_find_min(t_stack *head)
+t_stack	*ft_find_min(t_stack *head)
 {
-	int	min;
+	t_stack	*min;
 
 	if (!head)
-		return (0);
-	min = head->value;
+		return (NULL);
+	min = head;
 	while (head->next)
 	{
-		if (min > head->next->value)
-			min = head->next->value;
+		if (min->value > head->next->value)
+			min = head->next;
 		head = head->next;
 	}
 	return (min);
 }
+
+// t_stack	*ft_find_med(t_stack *head)
+// {
+// 	t_stack	*med;
+// 	int		i;
+// 	int		*tab;
+
+// 	if (!head)
+// 		return (NULL);
+// 	med = NULL;
+// 	tab = malloc(sizeof(int) * ft_stack_size(head));
+// 	i = 0;
+// 	while (head)
+// 	{
+// 		tab[i] = head->value;
+// 		head = head->next;
+// 	}
+// 	ft_bubble_sort(tab);
+	
+	
+	
+// 	return (med);
+// }

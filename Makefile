@@ -6,7 +6,7 @@
 #    By: merlich <merlich@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/24 21:18:17 by merlich           #+#    #+#              #
-#    Updated: 2022/02/05 18:08:56 by merlich          ###   ########.fr        #
+#    Updated: 2022/02/07 23:39:48 by merlich          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME	=	push_swap
 SRCS	=	main.c error_handling.c \
 			stack_functions_1.c stack_functions_2.c \
 			stack_operations_1.c stack_operations_2.c stack_operations_3.c \
-			pre_sort.c
+			pre_sort.c sort.c
 			
 OBJS_ADDR = objs/
 

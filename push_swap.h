@@ -6,7 +6,7 @@
 /*   By: merlich <merlich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 20:39:58 by merlich           #+#    #+#             */
-/*   Updated: 2022/02/05 18:11:35 by merlich          ###   ########.fr       */
+/*   Updated: 2022/02/07 23:38:49 by merlich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,8 @@ void		ft_sb(t_stack **head_b);
 void		ft_ss(t_stack **head_a, t_stack **head_b);
 void		ft_pa(t_stack **head_a, t_stack **head_b);
 void		ft_pb(t_stack **head_b, t_stack **head_a);
-void		ft_ra(t_stack **head_a)
-void		ft_rb(t_stack **head_b)
+void		ft_ra(t_stack **head_a);
+void		ft_rb(t_stack **head_b);
 void		ft_rr(t_stack **head_a, t_stack **head_b);
 void		ft_rra(t_stack **head_a);
 void		ft_rrb(t_stack **head_b);
@@ -63,8 +63,9 @@ void		ft_rrr(t_stack **head_a, t_stack **head_b);
 int			ft_is_sorted(t_stack *head);
 int			ft_is_finally_sorted(t_stack *head);
 
-int			ft_find_max(t_stack *head);
-int			ft_find_min(t_stack *head);
+t_stack		*ft_find_max(t_stack *head);
+t_stack		*ft_find_min(t_stack *head);
 
+void		ft_bubble_sort(int *tab);
 
 # endif
