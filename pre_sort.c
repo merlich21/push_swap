@@ -6,7 +6,7 @@
 /*   By: merlich <merlich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/05 15:36:25 by merlich           #+#    #+#             */
-/*   Updated: 2022/02/07 23:39:11 by merlich          ###   ########.fr       */
+/*   Updated: 2022/02/08 22:47:29 by merlich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,26 +70,3 @@ t_stack	*ft_find_min(t_stack *head)
 	}
 	return (min);
 }
-
-// t_stack	*ft_find_med(t_stack *head)
-// {
-// 	t_stack	*med;
-// 	int		i;
-// 	int		*tab;
-
-// 	if (!head)
-// 		return (NULL);
-// 	med = NULL;
-// 	tab = malloc(sizeof(int) * ft_stack_size(head));
-// 	i = 0;
-// 	while (head)
-// 	{
-// 		tab[i] = head->value;
-// 		head = head->next;
-// 	}
-// 	ft_bubble_sort(tab);
-	
-	
-	
-// 	return (med);
-// }

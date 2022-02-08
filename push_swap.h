@@ -6,7 +6,7 @@
 /*   By: merlich <merlich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 20:39:58 by merlich           #+#    #+#             */
-/*   Updated: 2022/02/07 23:38:49 by merlich          ###   ########.fr       */
+/*   Updated: 2022/02/08 23:51:51 by merlich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,14 @@ typedef struct	s_stack
 	int				score_a_rr;
 	struct s_stack	*next;
 }	t_stack;
+
+typedef struct push_swap
+{
+	t_stack	*min;
+	t_stack	*med;
+	t_stack *max;
+}	t_values;
+
 
 void		ft_push(t_stack **head, TYPE value);
 TYPE		ft_pop(t_stack **head);
@@ -65,7 +73,9 @@ int			ft_is_finally_sorted(t_stack *head);
 
 t_stack		*ft_find_max(t_stack *head);
 t_stack		*ft_find_min(t_stack *head);
+t_stack		*ft_find_med(t_stack *head);
 
-void		ft_bubble_sort(int *tab);
+void		ft_bubble_sort(int *tab, int len);
+void		ft_triple_sort(t_stack **head);
 
 # endif
