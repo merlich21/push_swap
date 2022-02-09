@@ -6,7 +6,7 @@
 /*   By: merlich <merlich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/05 15:36:25 by merlich           #+#    #+#             */
-/*   Updated: 2022/02/08 22:47:29 by merlich          ###   ########.fr       */
+/*   Updated: 2022/02/09 23:00:45 by merlich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ int	ft_is_sorted(t_stack *head)
 	int	count;
 
 	count = 0;
+	if (head && ft_stack_last(head)->value > head->value)	
+			count++;
 	while (head->next)
 	{
 		if (head->value > head->next->value)	

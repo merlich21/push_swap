@@ -6,7 +6,7 @@
 /*   By: merlich <merlich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 20:38:04 by merlich           #+#    #+#             */
-/*   Updated: 2022/02/08 23:55:48 by merlich          ###   ########.fr       */
+/*   Updated: 2022/02/09 23:55:31 by merlich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,31 @@
 // 		head = head->next;
 // 	}
 // }
+
+void	ft_free_all(t_stack **head_a, t_stack **head_b, t_values *vals)
+{
+	ft_delete_stack(head_a);
+	ft_delete_stack(head_b);
+	free(vals);
+}
+
+void	ft_fill_stack_b(t_stack **head_a, t_stack **head_b, t_values *vals)
+{
+	t_stack *elem_a;
+
+	elem_a = *head_a;
+	printf("\n max = %d\n", vals->max->value);
+	// printf("\n med = %d\n", vals->med->value);
+	// printf("\n min = %d\n", vals->min->value);
+	while (elem_a)
+	{
+		// if (elem_a->value == vals->min->value)
+		
+		ft_pb(head_b, head_a);
+		// elem_a = elem_a->next;
+	}
+	ft_print_stack(*head_a);
+}
 
 int	main(int argc, char **argv)
 {
@@ -51,25 +76,30 @@ int	main(int argc, char **argv)
 
 
 	// printf("\n max = %d\n", ft_find_max(head_a)->value);
+	// printf("\n med = %d\n", ft_find_med(head_a)->value);
 	// printf("\n min = %d\n", ft_find_min(head_a)->value);
 	if (ft_is_finally_sorted(head_a))
-		return (0);
-	if (ft_is_sorted(head_a))
 	{
-		vals->min->score_a_rr = 1;
-		vals->min->score_a_r = 3;
-		while (head_a->value > vals->min->value)
-		{
-			if (vals->min->score_a_r <= vals->min->score_a_rr)
-				ft_ra(&head_a);
-			else
-				ft_rra(&head_a);
-		}
-		// ft_print_stack(head_a);
+		ft_free_all(&head_a, &head_b, vals);
 		return (0);
 	}
-	printf("\n");
-	ft_triple_sort(&head_a);
-	ft_print_stack(head_a);
+	ft_set_index(&head_a);
+	if (ft_is_sorted(head_a))
+	{
+		ft_final_sort(&head_a, vals);
+		ft_print_stack(head_a);
+		printf("*********************\n");
+		ft_free_all(&head_a, &head_b, vals);
+		return (0);
+	}
+	/* Разбиение стека а */
+	ft_fill_stack_b(&head_a, &head_b, vals);
+	/* Рассчёт scores */
+
+	// printf("\n");
+	// ft_triple_sort(&head_a);
+	// ft_print_stack(head_a);
+	// ft_print_stack(head_b);
+	ft_free_all(&head_a, &head_b, vals);
 	return (0);
 }

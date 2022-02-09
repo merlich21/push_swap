@@ -6,7 +6,7 @@
 /*   By: merlich <merlich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/05 15:36:20 by merlich           #+#    #+#             */
-/*   Updated: 2022/02/08 23:55:51 by merlich          ###   ########.fr       */
+/*   Updated: 2022/02/09 21:06:21 by merlich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,12 +45,19 @@ static void	ft_check_1_2(t_stack **head)
 {
 	int		first;
 	int		second;
+	int		third;
 	t_stack	*tmp;
 
 	tmp = *head;
 	first = tmp->value;
 	second = tmp->next->value;
-	if (first > second)
+	third = tmp->next->next->value;
+	if (first > second && second < third && first > third)
+	{
+		ft_rra(head);
+		ft_rra(head);
+	}
+	else if (first > second)
 		ft_sa(head);
 }
 
