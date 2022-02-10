@@ -6,7 +6,7 @@
 /*   By: merlich <merlich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 20:39:58 by merlich           #+#    #+#             */
-/*   Updated: 2022/02/09 22:44:21 by merlich          ###   ########.fr       */
+/*   Updated: 2022/02/10 22:01:15 by merlich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,10 @@ typedef struct push_swap
 	t_stack	*min;
 	t_stack	*med;
 	t_stack *max;
+
+	t_stack	*head_a;
+	t_stack	*head_b;
+	t_stack *head_t;
 }	t_values;
 
 
@@ -83,7 +87,7 @@ t_stack		*ft_find_med(t_stack *head);
 
 void		ft_bubble_sort(int *tab, int len);
 void		ft_triple_sort(t_stack **head);
-void		ft_final_sort(t_stack **head_a, t_values *vals);
+void		ft_final_sort(t_values *vals);
 
 
 # endif

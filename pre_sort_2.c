@@ -14,6 +14,8 @@ void	ft_set_index(t_stack **head)
 		tmp->index = i;
 		tmp->score_a_r = i;
 		tmp->score_a_rr = stack_size - i;
+		tmp->score_b_r = i;
+		tmp->score_b_rr = stack_size - i;
 		i++;
 		tmp = tmp->next;
 	}
