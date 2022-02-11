@@ -6,7 +6,7 @@
 #    By: merlich <merlich@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/24 21:18:17 by merlich           #+#    #+#              #
-#    Updated: 2022/02/09 22:10:38 by merlich          ###   ########.fr        #
+#    Updated: 2022/02/11 22:07:43 by merlich          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,7 +52,7 @@ LIBFT_OBJS	=	${LIBFT_SRCS:.c=.o}
 
 CLANG		=	clang
 
-CFLAGS		=	-Wall -Wextra -Werror -g -MD
+CFLAGS		=	-Wall -Wextra  -g -MD
 
 RM			=	rm -rf
 

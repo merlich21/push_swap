@@ -6,7 +6,7 @@
 /*   By: merlich <merlich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 20:38:04 by merlich           #+#    #+#             */
-/*   Updated: 2022/02/10 23:59:30 by merlich          ###   ########.fr       */
+/*   Updated: 2022/02/11 23:59:36 by merlich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,55 +46,45 @@ static void	ft_fill_stacks(t_values *vals)
 	}
 }
 
-static t_stack	*ft_get_scores(t_values *vals)
+static t_stack	*ft_get_scores(t_values *vals, t_stack *elem_b)
 {
 	int		count;
 	t_stack *bigger;
 	t_stack *res;
 	t_stack	*elem_a;
-	t_stack	*elem_b;
-	t_stack	**tmp_a;
-	t_stack	**tmp_b;
 
 	count = 0;
 	bigger = NULL;
 	res = NULL;
-	tmp_a = &vals->head_a;
-	tmp_b = &vals->head_b;
-	elem_a = *tmp_a;
-	elem_b = *tmp_b;
-// Need external while (elem_b)
+	elem_a = vals->head_a;
+	// ft_set_index(&elem_a);
 	while (elem_a && count < 2)
 	{
 		if (elem_a->value > elem_b->value)
 		{
 			count++;
-			ft_push(&bigger, elem_a->value);
+			ft_push_elem(&bigger, elem_a);
 		}
 		elem_a = elem_a->next;
 	}
 	res = ft_find_min(bigger);
-	ft_delete_stack(&bigger);
 	return (res);
 }
 
 static void	ft_set_scores(t_values *vals)
 {
 	t_stack	*res;
-	t_stack	**tmp_b;
 	t_stack	*elem_b;
-
+	
 	res = NULL;
-	tmp_b = &vals->head_b;
-	elem_b = *tmp_b;
-	ft_set_index(&vals->head_a);
-	ft_set_index(&vals->head_b);
+	elem_b = vals->head_b;
 	while (elem_b)
 	{
 		res = ft_get_scores(vals, elem_b); ////
 		vals->head_b->score_a_r = res->score_a_r;
 		vals->head_b->score_a_rr = res->score_a_rr;
-		printf("*******\ni = %d\nvalue = %d\n score_a_r = %d\n", vals->head_b->index, vals->head_b->value, vals->head_b->score_a_rr);
+		// printf("*******\ni = %d\nvalue = %d\n score_a_r = %d\n", vals->head_b->index, vals->head_b->value, vals->head_b->score_a_r);
+		printf("&&&&&& \nvalue = %d\nscore_a_r = %d\n", elem_b->value, vals->head_b->score_b_r);
 		elem_b = elem_b->next;
 	}
 }
@@ -120,8 +110,10 @@ int	main(int argc, char **argv)
 		i++;
 	}
 	ft_check_duplicates(&vals->head_t);
+	ft_set_index_ra(&vals->head_t);
 	vals->min = ft_find_min(vals->head_t);
 	vals->med = ft_find_med(vals->head_t);
+	printf("mediana value = %d\n", vals->med->value);
 	vals->max = ft_find_max(vals->head_t);
 	ft_print_stack(vals->head_t);
 
@@ -131,7 +123,7 @@ int	main(int argc, char **argv)
 		ft_free_all(vals);
 		exit(EXIT_SUCCESS);
 	}
-	ft_set_index(&vals->head_t);
+	// ft_set_index(&vals->head_t);
 	if (ft_is_sorted(vals->head_t))
 	{
 		ft_final_sort(vals);
@@ -142,9 +134,30 @@ int	main(int argc, char **argv)
 	}
 
 	ft_fill_stacks(vals);
-	
+	// while (vals->head_b)
+	// {
+	// 	printf("!!!!@%d\n", vals->head_b->score_a_r);
+	// 	vals->head_b = vals->head_b->next;
+	// }
 	/* Рассчёт scores */
+	ft_set_index_ra(&vals->head_a);
+	ft_set_index_rb(&vals->head_b);
+	// t_stack *tmp_b;
+
+	// tmp_b = vals->head_a;
+	// while (tmp_b)
+	// {
+	// 	printf("!!!!@%d\n", tmp_b->score_a_rr);
+	// 	tmp_b = tmp_b->next;
+	// }
 	ft_set_scores(vals);
+		// printf("*********************\n");
+	// tmp_b = vals->head_b;
+	// while (tmp_b)
+	// {
+	// 	printf("!!!!@%d\n", tmp_b->score_a_r);
+	// 	tmp_b = tmp_b->next;
+	// }
 	// printf("\n");
 	// ft_triple_sort(&head_a);
 	ft_print_stack(vals->head_a);

@@ -6,7 +6,7 @@
 /*   By: merlich <merlich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/05 15:36:25 by merlich           #+#    #+#             */
-/*   Updated: 2022/02/09 23:00:45 by merlich          ###   ########.fr       */
+/*   Updated: 2022/02/11 23:47:33 by merlich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,4 +71,15 @@ t_stack	*ft_find_min(t_stack *head)
 		head = head->next;
 	}
 	return (min);
+}
+
+int	ft_min(int a, int b)
+{
+	int	res;
+
+	if (a < b)
+		res = a;
+	else
+		res = b;
+	return (res);
 }
