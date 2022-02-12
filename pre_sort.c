@@ -6,7 +6,7 @@
 /*   By: merlich <merlich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/05 15:36:25 by merlich           #+#    #+#             */
-/*   Updated: 2022/02/11 23:47:33 by merlich          ###   ########.fr       */
+/*   Updated: 2022/02/12 21:00:24 by merlich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,38 +39,6 @@ int	ft_is_sorted(t_stack *head)
 	if (count > 1)
 		return (0);
 	return (1);
-}
-
-t_stack	*ft_find_max(t_stack *head)
-{
-	t_stack	*max;
-
-	if (!head)
-		return (NULL);
-	max = head;
-	while (head->next)
-	{
-		if (max->value < head->next->value)
-			max = head->next;
-		head = head->next;
-	}
-	return (max);
-}
-
-t_stack	*ft_find_min(t_stack *head)
-{
-	t_stack	*min;
-
-	if (!head)
-		return (NULL);
-	min = head;
-	while (head->next)
-	{
-		if (min->value > head->next->value)
-			min = head->next;
-		head = head->next;
-	}
-	return (min);
 }
 
 int	ft_min(int a, int b)

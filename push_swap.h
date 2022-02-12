@@ -6,7 +6,7 @@
 /*   By: merlich <merlich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 20:39:58 by merlich           #+#    #+#             */
-/*   Updated: 2022/02/11 23:51:45 by merlich          ###   ########.fr       */
+/*   Updated: 2022/02/12 23:20:26 by merlich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,22 @@ typedef struct	s_stack
 {
 	TYPE			value;
 	int				index;
+	
 	int				score_b_r;
 	int				score_b_rr;
 	int				score_a_r;
 	int				score_a_rr;
 	int				score_rr;
 	int				score_rrr;
+
+	int				ra_rr;
+	int				rb_rr;
+	int				rra_rrr;
+	int				rrb_rrr;
+	int				ra_rrb;
+	int				rb_rra;
+	
+	int				min_sum;
 	struct s_stack	*next;
 }	t_stack;
 
@@ -76,9 +86,11 @@ void		ft_rra(t_stack **head_a);
 void		ft_rrb(t_stack **head_b);
 void		ft_rrr(t_stack **head_a, t_stack **head_b);
 
+int			ft_min(int a, int b);
 void		ft_set_index_ra(t_stack **head_a);
 void		ft_set_index_rb(t_stack **head_b);
-int			ft_min(int a, int b);
+void    	ft_set_index_rr(t_stack **head_b);
+void		ft_find_scores_sum(t_stack **head_b);
 
 int			ft_is_sorted(t_stack *head);
 int			ft_is_finally_sorted(t_stack *head);

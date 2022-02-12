@@ -6,7 +6,7 @@
 /*   By: merlich <merlich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 20:38:04 by merlich           #+#    #+#             */
-/*   Updated: 2022/02/11 23:59:36 by merlich          ###   ########.fr       */
+/*   Updated: 2022/02/12 23:26:05 by merlich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,11 +80,12 @@ static void	ft_set_scores(t_values *vals)
 	elem_b = vals->head_b;
 	while (elem_b)
 	{
-		res = ft_get_scores(vals, elem_b); ////
-		vals->head_b->score_a_r = res->score_a_r;
-		vals->head_b->score_a_rr = res->score_a_rr;
+		res = ft_get_scores(vals, elem_b);
+		elem_b->score_a_r = res->score_a_r;
+		elem_b->score_a_rr = res->score_a_rr;
 		// printf("*******\ni = %d\nvalue = %d\n score_a_r = %d\n", vals->head_b->index, vals->head_b->value, vals->head_b->score_a_r);
-		printf("&&&&&& \nvalue = %d\nscore_a_r = %d\n", elem_b->value, vals->head_b->score_b_r);
+		// printf("&&&&&& i = %d\nvalue = %d\n score_a_r = %d\nscore_a_rr = %d\n score_b_r = %d\n score_b_rr = %d\n",\
+		// elem_b->index, elem_b->value, elem_b->score_a_r, elem_b->score_a_rr, elem_b->score_b_r, elem_b->score_b_rr);
 		elem_b = elem_b->next;
 	}
 }
@@ -110,7 +111,9 @@ int	main(int argc, char **argv)
 		i++;
 	}
 	ft_check_duplicates(&vals->head_t);
+
 	ft_set_index_ra(&vals->head_t);
+	
 	vals->min = ft_find_min(vals->head_t);
 	vals->med = ft_find_med(vals->head_t);
 	printf("mediana value = %d\n", vals->med->value);
@@ -142,7 +145,7 @@ int	main(int argc, char **argv)
 	/* Рассчёт scores */
 	ft_set_index_ra(&vals->head_a);
 	ft_set_index_rb(&vals->head_b);
-	// t_stack *tmp_b;
+	t_stack *tmp_b;
 
 	// tmp_b = vals->head_a;
 	// while (tmp_b)
@@ -151,13 +154,23 @@ int	main(int argc, char **argv)
 	// 	tmp_b = tmp_b->next;
 	// }
 	ft_set_scores(vals);
-		// printf("*********************\n");
-	// tmp_b = vals->head_b;
-	// while (tmp_b)
-	// {
-	// 	printf("!!!!@%d\n", tmp_b->score_a_r);
-	// 	tmp_b = tmp_b->next;
-	// }
+	ft_set_index_rr(&vals->head_b);
+	ft_find_scores_sum(&vals->head_b);
+		printf("*********************\n");
+	tmp_b = vals->head_b;
+	while (tmp_b)
+	{
+		printf("*******\ni = %d\nvalue = %d\n score_a_r = %d\nscore_a_rr = %d\n score_b_r = %d\n score_b_rr = %d\nscore_rr = %d\nscore_rrr = %d\n\
+		ra_rr = %d\nrb_rr = %d\nrra_rrr = %d\n \
+		rrb_rrr = %d\nra_rrb = %d\nrb_rra = %d\n \
+		min_sum = %d\n", \
+		tmp_b->index, tmp_b->value, tmp_b->score_a_r, \
+		tmp_b->score_a_rr, tmp_b->score_b_r, tmp_b->score_b_rr, tmp_b->score_rr, tmp_b->score_rrr,\
+		tmp_b->ra_rr, tmp_b->rb_rr, tmp_b->rra_rrr, tmp_b->rrb_rrr, tmp_b->ra_rrb, tmp_b->rb_rra,\
+		tmp_b->min_sum);
+		// printf("!!!!@%d\n", tmp_b->score_b_r);
+		tmp_b = tmp_b->next;
+	}
 	// printf("\n");
 	// ft_triple_sort(&head_a);
 	ft_print_stack(vals->head_a);
