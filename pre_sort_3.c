@@ -1,18 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   pre_sort_3.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: merlich <merlich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/09 18:16:35 by merlich           #+#    #+#             */
-/*   Updated: 2022/02/14 23:35:25 by merlich          ###   ########.fr       */
+/*   Created: 2022/02/14 21:24:13 by merlich           #+#    #+#             */
+/*   Updated: 2022/02/14 22:09:26 by merlich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-void	ft_putstr_fd(char *s, int fd)
+t_stack	*ft_find_min_min_sum(t_stack *head)
 {
-	write(fd, s, ft_strlen(s));
+	t_stack	*min;
+
+	if (!head)
+		return (NULL);
+	min = head;
+	while (head->next)
+	{
+		if (min->min_sum > head->next->min_sum)
+			min = head->next;
+		head = head->next;
+	}
+	return (min);
 }

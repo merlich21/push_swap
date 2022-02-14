@@ -6,7 +6,7 @@
 /*   By: merlich <merlich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/05 15:36:20 by merlich           #+#    #+#             */
-/*   Updated: 2022/02/09 21:06:21 by merlich          ###   ########.fr       */
+/*   Updated: 2022/02/14 23:27:00 by merlich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	ft_bubble_sort(int *tab, int len)
 		{
 			if (tab[j] > tab[j + 1])
 				ft_swap(&tab[j], &tab[j + 1]);
-			j++;	
+			j++;
 		}
 		i++;
 	}

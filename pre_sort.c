@@ -6,7 +6,7 @@
 /*   By: merlich <merlich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/05 15:36:25 by merlich           #+#    #+#             */
-/*   Updated: 2022/02/12 21:00:24 by merlich          ###   ########.fr       */
+/*   Updated: 2022/02/14 23:34:38 by merlich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	ft_is_finally_sorted(t_stack *head)
 {
 	while (head->next)
 	{
-		if (head->value > head->next->value)	
+		if (head->value > head->next->value)
 			return (0);
 		head = head->next;
 	}
@@ -28,11 +28,11 @@ int	ft_is_sorted(t_stack *head)
 	int	count;
 
 	count = 0;
-	if (head && ft_stack_last(head)->value > head->value)	
+	if (head && ft_stack_last(head)->value > head->value)
 			count++;
 	while (head->next)
 	{
-		if (head->value > head->next->value)	
+		if (head->value > head->next->value)
 			count++;
 		head = head->next;
 	}
@@ -49,5 +49,30 @@ int	ft_min(int a, int b)
 		res = a;
 	else
 		res = b;
+	return (res);
+}
+
+int	ft_max(int a, int b)
+{
+	int	res;
+
+	if (a > b)
+		res = a;
+	else
+		res = b;
+	return (res);
+}
+
+int	ft_nonzero_min(int a, int b)
+{
+	int	res;
+
+	res = 0;
+	if (a < b && a != 0)
+		res = a;
+	else if (b < a && b != 0)
+		res = b;
+	else
+		res = ft_max(a, b);
 	return (res);
 }

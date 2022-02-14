@@ -6,7 +6,7 @@
 #    By: merlich <merlich@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/24 21:18:17 by merlich           #+#    #+#              #
-#    Updated: 2022/02/12 21:06:08 by merlich          ###   ########.fr        #
+#    Updated: 2022/02/14 23:50:06 by merlich          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,8 @@ NAME	=	push_swap
 SRCS	=	main.c error_handling.c \
 			stack_functions_1.c stack_functions_2.c \
 			stack_operations_1.c stack_operations_2.c stack_operations_3.c \
-			pre_sort.c pre_sort_2.c sort.c sort_2.c set_index.c
+			pre_sort.c pre_sort_2.c pre_sort_3.c sort.c sort_2.c sort_3.c \
+			set_index.c scores.c
 			
 OBJS_ADDR = objs/
 
@@ -52,7 +53,7 @@ LIBFT_OBJS	=	${LIBFT_SRCS:.c=.o}
 
 CLANG		=	clang
 
-CFLAGS		=	-Wall -Wextra  -g -MD
+CFLAGS		=	-Wall -Wextra -Werror -g -MD
 
 RM			=	rm -rf
 

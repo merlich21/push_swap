@@ -1,0 +1,66 @@
+// while (vals->head_b)
+	// {
+	// 	printf("!!!!@%d\n", vals->head_b->score_a_r);
+	// 	vals->head_b = vals->head_b->next;
+	// }
+
+	// t_stack *tmp_b;
+	// t_stack *tmp_b_1;
+	// tmp_b = vals->head_a;
+	// while (tmp_b)
+	// {
+	// 	printf("!!!!@%d\n", tmp_b->score_a_rr);
+	// 	tmp_b = tmp_b->next;
+	// }
+
+		// printf("*********************\n");
+	// tmp_b = vals->head_b;
+	// while (tmp_b)
+	// {
+	// 	printf("*******\ni = %d\nvalue = %d\n score_a_r = %d\nscore_a_rr = %d\n score_b_r = %d\n score_b_rr = %d\nscore_rr = %d\nscore_rrr = %d\n\
+	// 	ra_rr = %d\nrb_rr = %d\nrra_rrr = %d\n \
+	// 	rrb_rrr = %d\nra_rrb = %d\nrb_rra = %d\n \
+	// 	min_sum = %d\n", \
+	// 	tmp_b->index, tmp_b->value, tmp_b->score_a_r, \
+	// 	tmp_b->score_a_rr, tmp_b->score_b_r, tmp_b->score_b_rr, tmp_b->score_rr, tmp_b->score_rrr,\
+	// 	tmp_b->ra_rr, tmp_b->rb_rr, tmp_b->rra_rrr, tmp_b->rrb_rrr, tmp_b->ra_rrb, tmp_b->rb_rra,\
+	// 	tmp_b->min_sum);
+	// 	// printf("!!!!@%d\n", tmp_b->score_b_r);
+	// 	tmp_b = tmp_b->next;
+	// }
+	// tmp_b_1 = vals->head_b;
+
+	// printf("MIN = %d\n", ft_find_min_sum(vals->head_b)->value);
+	// printf("\n");
+	// ft_triple_sort(&head_a);
+
+
+
+
+
+		// printf("*******\ni = %d\nvalue = %d\n score_a_r = %d\n", vals->head_b->index, vals->head_b->value, vals->head_b->score_a_r);
+		// printf("&&&&&& i = %d\nvalue = %d\n score_a_r = %d\nscore_a_rr = %d\n score_b_r = %d\n score_b_rr = %d\n",\
+		// elem_b->index, elem_b->value, elem_b->score_a_r, elem_b->score_a_rr, elem_b->score_b_r, elem_b->score_b_rr);
+
+
+    vals->head_a = NULL;
+	vals->head_b = NULL;
+	vals->head_t = NULL;
+	vals->min = NULL;
+	vals->max = NULL;
+	vals->med = NULL;
+	vals->minimal = NULL;
+
+void	ft_print_stack(const t_stack *head)
+{
+	ft_putstr_fd("stack >\n", 1);
+	while (head)
+	{
+		ft_putnbr_fd(head->value, 1);
+		ft_putchar_fd('\n', 1);
+		head = head->next;
+	}
+}
+
+void		ft_print_stack(const t_stack *head);
+

@@ -1,9 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   pre_sort_2.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: merlich <merlich@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/14 23:33:19 by merlich           #+#    #+#             */
+/*   Updated: 2022/02/14 23:33:52 by merlich          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
-#include <stdio.h>
 
 static void	ft_fill_tab(int *tab, t_stack *head)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (head)
@@ -31,7 +42,6 @@ t_stack	*ft_find_med(t_stack *head)
 	int		*tab;
 	int		mediana;
 	int		len;
-
 
 	if (!head)
 		return (NULL);

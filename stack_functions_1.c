@@ -6,7 +6,7 @@
 /*   By: merlich <merlich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 20:30:44 by merlich           #+#    #+#             */
-/*   Updated: 2022/02/09 23:21:16 by merlich          ###   ########.fr       */
+/*   Updated: 2022/02/14 23:45:03 by merlich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,17 +43,6 @@ TYPE	ft_peak(const t_stack *head)
 	if (NULL == head)
 		exit(STACK_UNDERFLOW);
 	return (head->value);
-}
-
-void	ft_print_stack(const t_stack *head)
-{
-	ft_putstr_fd("stack >\n", 1);
-	while (head)
-	{
-		ft_putnbr_fd(head->value, 1);
-		ft_putchar_fd('\n', 1);
-		head = head->next;
-	}
 }
 
 void	ft_delete_stack(t_stack **head)
