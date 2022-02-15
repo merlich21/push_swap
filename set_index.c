@@ -6,7 +6,7 @@
 /*   By: merlich <merlich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 20:58:29 by merlich           #+#    #+#             */
-/*   Updated: 2022/02/14 23:33:01 by merlich          ###   ########.fr       */
+/*   Updated: 2022/02/15 22:56:29 by merlich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,11 +69,8 @@ void	ft_set_index_rr(t_stack **head_b)
 	}
 }
 
-void	ft_find_scores_sum(t_stack **head_b)
+void	ft_find_scores_sum(t_stack *elem)
 {
-	t_stack	*elem;
-
-	elem = *head_b;
 	while (elem)
 	{
 		elem->ra_rr = elem->score_a_r + elem->score_rr;

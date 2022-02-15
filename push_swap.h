@@ -6,7 +6,7 @@
 /*   By: merlich <merlich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 20:39:58 by merlich           #+#    #+#             */
-/*   Updated: 2022/02/15 19:57:19 by merlich          ###   ########.fr       */
+/*   Updated: 2022/02/15 22:55:16 by merlich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ int			ft_max(int a, int b);
 void		ft_set_index_ra(t_stack **head_a);
 void		ft_set_index_rb(t_stack **head_b);
 void		ft_set_index_rr(t_stack **head_b);
-void		ft_find_scores_sum(t_stack **head_b);
+void		ft_find_scores_sum(t_stack *elem);
 
 int			ft_is_sorted(t_stack *head);
 int			ft_is_finally_sorted(t_stack *head);

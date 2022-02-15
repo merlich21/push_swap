@@ -6,7 +6,7 @@
 /*   By: merlich <merlich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/05 15:36:25 by merlich           #+#    #+#             */
-/*   Updated: 2022/02/14 23:34:38 by merlich          ###   ########.fr       */
+/*   Updated: 2022/02/15 22:37:17 by merlich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,10 +56,13 @@ int	ft_max(int a, int b)
 {
 	int	res;
 
+	res = 0;
 	if (a > b)
 		res = a;
-	else
+	else if (b > a)
 		res = b;
+	else if (a == b)
+		res = a;
 	return (res);
 }
 
