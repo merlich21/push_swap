@@ -6,7 +6,7 @@
 /*   By: merlich <merlich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 22:10:44 by merlich           #+#    #+#             */
-/*   Updated: 2022/02/14 23:45:56 by merlich          ###   ########.fr       */
+/*   Updated: 2022/02/15 20:30:04 by merlich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,23 @@
 
 void	ft_final_sort(t_values *vals)
 {
-	while (vals->head_t->value > vals->min->value)
+	while (vals->head_a->value > vals->min->value)
 	{
 		if (vals->min->score_a_r <= vals->min->score_a_rr)
-			ft_ra(&vals->head_t);
+			ft_ra(&vals->head_a);
 		else
-			ft_rra(&vals->head_t);
+			ft_rra(&vals->head_a);
 	}
 }
 
 void	ft_check_is_sorted(t_values *vals)
 {
-	if (ft_is_finally_sorted(vals->head_t))
+	if (ft_is_finally_sorted(vals->head_a))
 	{
 		ft_free_all(vals);
 		exit(EXIT_SUCCESS);
 	}
-	if (ft_is_sorted(vals->head_t))
+	if (ft_is_sorted(vals->head_a))
 	{
 		ft_final_sort(vals);
 		ft_free_all(vals);

@@ -6,7 +6,7 @@
 /*   By: merlich <merlich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 20:23:49 by merlich           #+#    #+#             */
-/*   Updated: 2022/02/14 23:09:21 by merlich          ###   ########.fr       */
+/*   Updated: 2022/02/15 19:57:58 by merlich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,6 @@ void	ft_push_elem(t_stack **head, t_stack *elem)
 void	ft_free_all(t_values *vals)
 {
 	ft_delete_stack(&vals->head_a);
-	ft_delete_stack(&vals->head_t);
 	ft_delete_stack(&vals->head_b);
 	free(vals);
 }

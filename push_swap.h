@@ -6,7 +6,7 @@
 /*   By: merlich <merlich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 20:39:58 by merlich           #+#    #+#             */
-/*   Updated: 2022/02/14 23:49:54 by merlich          ###   ########.fr       */
+/*   Updated: 2022/02/15 19:57:19 by merlich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,6 @@ typedef struct push_swap
 
 	t_stack	*head_a;
 	t_stack	*head_b;
-	t_stack	*head_t;
 
 	t_stack	*minimal;
 }	t_values;
