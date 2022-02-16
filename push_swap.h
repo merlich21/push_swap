@@ -6,7 +6,7 @@
 /*   By: merlich <merlich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 20:39:58 by merlich           #+#    #+#             */
-/*   Updated: 2022/02/16 21:50:08 by merlich          ###   ########.fr       */
+/*   Updated: 2022/02/16 23:56:14 by merlich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ typedef struct s_stack
 {
 	TYPE			value;
 	int				index;
+	int				dec_index;
+	int				bin_index;
 
 	int				score_b_r;
 	int				score_b_rr;

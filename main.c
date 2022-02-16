@@ -6,7 +6,7 @@
 /*   By: merlich <merlich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 20:38:04 by merlich           #+#    #+#             */
-/*   Updated: 2022/02/16 22:37:01 by merlich          ###   ########.fr       */
+/*   Updated: 2022/02/16 23:49:39 by merlich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,29 +96,7 @@ int	main(int argc, char **argv)
 		i++;
 	}
 	ft_check_duplicates(&vals->head_a);
-	ft_set_index_ra(vals->head_a);
-	vals->min = ft_find_min(vals->head_a);
-	vals->med = ft_find_med(vals->head_a);
-	vals->max = ft_find_max(vals->head_a);
-	// printf("min = %d\n",vals->min->value);
-	// printf("med = %d\n",vals->med->value);
-	// printf("max = %d\n",vals->max->value);
-	ft_check_is_sorted(vals);
-	ft_fill_stacks(vals);
-		ft_print_stack(vals->head_a);
-		ft_print_stack(vals->head_b);
-	ft_triple_sort(&vals->head_a);
-		ft_print_stack(vals->head_a);
-	while (ft_stack_size(vals->head_b))
-	{
-		ft_sort(vals);
-		ft_print_stack(vals->head_a);
-		ft_print_stack(vals->head_b);
-	}
-	ft_set_index_ra(vals->head_a);
-	ft_final_sort(vals);
-		ft_print_stack(vals->head_a);
-		ft_print_stack(vals->head_b);
+
 	ft_free_all(vals);
 	return (0);
 }
