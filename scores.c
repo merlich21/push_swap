@@ -6,7 +6,7 @@
 /*   By: merlich <merlich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 23:48:59 by merlich           #+#    #+#             */
-/*   Updated: 2022/02/15 20:24:36 by merlich          ###   ########.fr       */
+/*   Updated: 2022/02/16 21:26:54 by merlich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	ft_set_scores(t_values *vals)
 
 	res = NULL;
 	elem_b = vals->head_b;
-	while (elem_b)
+	while (elem_b) ////////////////////////////////////
 	{
 		res = ft_get_scores(vals, elem_b);
 		elem_b->score_a_r = res->score_a_r;

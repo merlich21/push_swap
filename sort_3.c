@@ -6,7 +6,7 @@
 /*   By: merlich <merlich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 22:39:40 by merlich           #+#    #+#             */
-/*   Updated: 2022/02/14 22:45:14 by merlich          ###   ########.fr       */
+/*   Updated: 2022/02/16 22:19:42 by merlich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void	ft_action_rra_rrr(t_values *vals)
 {
-	while (vals->minimal->score_a_rr)
+	while (vals->minimal->rra_new)
 	{
 		ft_rra(&vals->head_a);
-		vals->minimal->score_a_rr--;
+		vals->minimal->rra_new--;
 	}
 	while (vals->minimal->score_rrr)
 	{
@@ -28,10 +28,10 @@ void	ft_action_rra_rrr(t_values *vals)
 
 void	ft_action_rrb_rrr(t_values *vals)
 {
-	while (vals->minimal->score_b_rr)
+	while (vals->minimal->rrb_new)
 	{
 		ft_rrb(&vals->head_b);
-		vals->minimal->score_b_rr--;
+		vals->minimal->rrb_new--;
 	}
 	while (vals->minimal->score_rrr)
 	{
