@@ -6,7 +6,7 @@
 /*   By: merlich <merlich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 20:39:58 by merlich           #+#    #+#             */
-/*   Updated: 2022/02/16 23:56:14 by merlich          ###   ########.fr       */
+/*   Updated: 2022/02/17 19:12:42 by merlich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,5 +126,11 @@ void		ft_action_rrb_rrr(t_values *vals);
 void		ft_action_ra_rrb(t_values *vals);
 void		ft_action_rb_rra(t_values *vals);
 void		ft_operation_parser(t_values *vals);
+
+int			ft_dec_to_bin(int num);
+void		ft_fill_tab(int *tab, t_stack *head);
+void		ft_set_index(t_stack *head);
+void		ft_sort_small_stack(t_values *vals);
+void		ft_radix_sort(t_values *vals);
 
 #endif

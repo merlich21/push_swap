@@ -6,13 +6,13 @@
 /*   By: merlich <merlich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 23:33:19 by merlich           #+#    #+#             */
-/*   Updated: 2022/02/14 23:33:52 by merlich          ###   ########.fr       */
+/*   Updated: 2022/02/17 18:22:29 by merlich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	ft_fill_tab(int *tab, t_stack *head)
+void	ft_fill_tab(int *tab, t_stack *head)
 {
 	int	i;
 

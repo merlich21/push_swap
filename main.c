@@ -6,7 +6,7 @@
 /*   By: merlich <merlich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 20:38:04 by merlich           #+#    #+#             */
-/*   Updated: 2022/02/16 23:49:39 by merlich          ###   ########.fr       */
+/*   Updated: 2022/02/17 20:19:01 by merlich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,52 +33,6 @@ static void	ft_init(t_values *vals)
 	vals->minimal = NULL;
 }
 
-static void	ft_fill_stacks(t_values *vals)
-{
-	while (vals->head_a && ft_stack_size(vals->head_a) != 3)
-	{
-		if (vals->head_a->value == vals->min->value || \
-			vals->head_a->value == vals->med->value || \
-			vals->head_a->value == vals->max->value)
-		{
-			ft_ra(&vals->head_a);
-		}
-		else
-		{
-			ft_pb(&vals->head_b, &vals->head_a);
-		}
-	}
-	// ft_triple_sort(&vals->head_a);
-}
-
-static void	ft_sort(t_values *vals)
-{
-	ft_set_index_ra(vals->head_a);
-	ft_set_index_rb(vals->head_b);
-	ft_set_scores(vals);  //////////////////////////////////
-	ft_set_index_rr(vals->head_b);
-	ft_find_scores_sum(vals->head_b);
-	vals->minimal = ft_find_min_min_sum(vals->head_b);
-	ft_operation_parser(vals);
-	// t_stack	*tmp_b;
-	// tmp_b = vals->head_b;
-	// while (tmp_b)
-	// {
-	// 	printf("*******\ni = %d\nvalue = %d\n score_a_r = %d\nscore_a_rr = %d\n score_b_r = %d\n score_b_rr = %d\nscore_rr = %d\nscore_rrr = %d\n\
-	// 	ra_rr = %d\nrb_rr = %d\nrra_rrr = %d\n \
-	// 	rrb_rrr = %d\nra_rrb = %d\nrb_rra = %d\n \
-	// 	min_sum = %d\n", \
-	// 	tmp_b->index, tmp_b->value, tmp_b->score_a_r, \
-	// 	tmp_b->score_a_rr, tmp_b->score_b_r, tmp_b->score_b_rr, tmp_b->score_rr, tmp_b->score_rrr,\
-	// 	tmp_b->ra_rr, tmp_b->rb_rr, tmp_b->rra_rrr, tmp_b->rrb_rrr, tmp_b->ra_rrb, tmp_b->rb_rra,\
-	// 	tmp_b->min_sum);
-	// 	// printf("!!!!@%d\n", tmp_b->score_b_r);
-	// 	tmp_b = tmp_b->next;
-	// }
-	// 	ft_print_stack(vals->head_a);
-	// 	ft_print_stack(vals->head_b);
-}
-
 int	main(int argc, char **argv)
 {
 	int			i;
@@ -96,7 +50,14 @@ int	main(int argc, char **argv)
 		i++;
 	}
 	ft_check_duplicates(&vals->head_a);
-
+	ft_set_index(vals->head_a);
+	ft_set_index_ra(vals->head_a);
+	if (ft_stack_size(vals->head_a) <= 5)
+		ft_sort_small_stack(vals);
+	else
+		ft_radix_sort(vals);
+	ft_print_stack(vals->head_a);
+	// ft_print_stack(vals->head_b);
 	ft_free_all(vals);
 	return (0);
 }

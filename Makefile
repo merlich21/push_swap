@@ -6,7 +6,7 @@
 #    By: merlich <merlich@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/24 21:18:17 by merlich           #+#    #+#              #
-#    Updated: 2022/02/15 19:41:32 by merlich          ###   ########.fr        #
+#    Updated: 2022/02/17 19:44:41 by merlich          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,8 @@ SRCS	=	main.c error_handling.c \
 			stack_functions_1.c stack_functions_2.c \
 			stack_operations_1.c stack_operations_2.c stack_operations_3.c \
 			pre_sort.c pre_sort_2.c pre_sort_3.c sort.c sort_2.c sort_3.c \
-			set_index.c scores.c
+			set_index.c scores.c \
+			pre_radix_sort.c radix_sort.c sort_small_stack.c
 			
 OBJS_ADDR = objs/
 
