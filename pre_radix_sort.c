@@ -6,7 +6,7 @@
 /*   By: merlich <merlich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 18:04:35 by merlich           #+#    #+#             */
-/*   Updated: 2022/02/17 18:37:58 by merlich          ###   ########.fr       */
+/*   Updated: 2022/02/17 23:08:37 by merlich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,6 @@ void	ft_set_index(t_stack *head)
 			if (head->value == tab[i])
 			{
 				head->dec_index = i;
-				head->bin_index = ft_dec_to_bin(i);
 				break ;
 			}
 			i++;

@@ -6,7 +6,7 @@
 /*   By: merlich <merlich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 20:23:49 by merlich           #+#    #+#             */
-/*   Updated: 2022/02/16 21:25:45 by merlich          ###   ########.fr       */
+/*   Updated: 2022/02/17 23:31:50 by merlich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,22 +57,20 @@ t_stack	*ft_stack_last_but_one(t_stack *lst)
 
 void	ft_push_elem(t_stack **head, t_stack *elem)
 {
-	t_stack	*tmp;
-
-	tmp = malloc(sizeof(t_stack));
-	if (NULL == tmp)
-		exit(STACK_OVERFLOW);
-	*tmp = *elem;
 	if (NULL != elem)
 	{
-		tmp->next = *head;
-		*head = tmp;
+		elem->next = *head;
+		*head = elem;
 	}
 }
 
-void	ft_free_all(t_values *vals)
+t_stack	*ft_pop_elem(t_stack **head)
 {
-	ft_delete_stack(&vals->head_a);
-	ft_delete_stack(&vals->head_b);
-	free(vals);
+	t_stack	*elem;
+
+	if (NULL == *head)
+		exit(STACK_UNDERFLOW);
+	elem = *head;
+	*head = elem->next;
+	return (elem);
 }

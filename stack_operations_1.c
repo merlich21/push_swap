@@ -6,7 +6,7 @@
 /*   By: merlich <merlich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 20:25:23 by merlich           #+#    #+#             */
-/*   Updated: 2022/02/14 23:26:43 by merlich          ###   ########.fr       */
+/*   Updated: 2022/02/17 21:02:16 by merlich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,12 +49,12 @@ void	ft_ss(t_stack **head_a, t_stack **head_b)
 
 void	ft_pa(t_stack **head_a, t_stack **head_b)
 {
-	ft_push(head_a, ft_pop(head_b));
+	ft_push_elem(head_a, ft_pop_elem(head_b));
 	write(1, "pa\n", 3);
 }
 
 void	ft_pb(t_stack **head_b, t_stack **head_a)
 {
-	ft_push(head_b, ft_pop(head_a));
+	ft_push_elem(head_b, ft_pop_elem(head_a));
 	write(1, "pb\n", 3);
 }

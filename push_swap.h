@@ -6,7 +6,7 @@
 /*   By: merlich <merlich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 20:39:58 by merlich           #+#    #+#             */
-/*   Updated: 2022/02/17 19:12:42 by merlich          ###   ########.fr       */
+/*   Updated: 2022/02/17 23:52:35 by merlich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,7 @@ typedef struct push_swap
 void		ft_push(t_stack **head, TYPE value);
 void		ft_push_elem(t_stack **head, t_stack *elem);
 TYPE		ft_pop(t_stack **head);
+t_stack		*ft_pop_elem(t_stack **head);
 TYPE		ft_peak(const t_stack *head);
 void		ft_delete_stack(t_stack **head);
 int			ft_stack_size(t_stack *lst);
@@ -132,5 +133,5 @@ void		ft_fill_tab(int *tab, t_stack *head);
 void		ft_set_index(t_stack *head);
 void		ft_sort_small_stack(t_values *vals);
 void		ft_radix_sort(t_values *vals);
-
+void	ft_print_stack(const t_stack *head);
 #endif

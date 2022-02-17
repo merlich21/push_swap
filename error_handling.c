@@ -6,7 +6,7 @@
 /*   By: merlich <merlich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 22:31:44 by merlich           #+#    #+#             */
-/*   Updated: 2022/02/03 00:00:21 by merlich          ###   ########.fr       */
+/*   Updated: 2022/02/17 21:54:35 by merlich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,24 +34,22 @@ void	ft_check_isdigits(int argc, char **argv)
 
 void	ft_check_duplicates(t_stack **head)
 {
-	t_stack	**del;
 	t_stack	*tmp;
-	t_stack	*head_val;
+	t_stack	*elem;
 
-	del = head;
-	head_val = *head;
-	while (head_val)
+	elem = *head;
+	while (elem)
 	{
-		tmp = head_val->next;
+		tmp = elem->next;
 		while (tmp)
 		{
-			if (head_val->value == tmp->value)
+			if (elem->value == tmp->value)
 			{
-				ft_delete_stack(del);
+				ft_delete_stack(head);
 				ft_error_msg();
 			}
 			tmp = tmp->next;
 		}
-		head_val = head_val->next;
+		elem = elem->next;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: merlich <merlich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 18:40:30 by merlich           #+#    #+#             */
-/*   Updated: 2022/02/17 20:06:06 by merlich          ###   ########.fr       */
+/*   Updated: 2022/02/17 21:01:03 by merlich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,14 @@ void	ft_radix_sort(t_values *vals)
 	stack_a_size = ft_stack_size(vals->head_a);
 	max_index = stack_a_size - 1;
 	max_bits = 0;
-	while (max_index>>max_bits)
+	while (max_index >> max_bits)
 		max_bits++;
 	while (i < max_bits)
 	{
 		j = 0;
 		while (j < stack_a_size)
 		{
-			if ((vals->head_a->dec_index>>i)&1)
+			if ((vals->head_a->dec_index >> i) & 1)
 				ft_ra(&vals->head_a);
 			else
 				ft_pb(&vals->head_b, &vals->head_a);
