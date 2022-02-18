@@ -6,7 +6,7 @@
 /*   By: merlich <merlich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 23:48:59 by merlich           #+#    #+#             */
-/*   Updated: 2022/02/17 19:51:32 by merlich          ###   ########.fr       */
+/*   Updated: 2022/02/18 19:50:14 by merlich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ t_stack	*ft_get_scores(t_values *vals, t_stack *elem_b)
 	{
 		if (elem_a->value > elem_b->value)
 		{
-			ft_push_elem(&bigger, elem_a);
+			ft_push_copy(&bigger, elem_a);
 		}
 		elem_a = elem_a->next;
 	}

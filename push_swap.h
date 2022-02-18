@@ -6,7 +6,7 @@
 /*   By: merlich <merlich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 20:39:58 by merlich           #+#    #+#             */
-/*   Updated: 2022/02/17 23:52:35 by merlich          ###   ########.fr       */
+/*   Updated: 2022/02/18 19:53:22 by merlich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ typedef struct s_stack
 	int				rra_new;
 	int				rrb_new;
 
-
 	int				ra_rr;
 	int				rb_rr;
 	int				rra_rrr;
@@ -59,6 +58,7 @@ typedef struct s_stack
 
 typedef struct push_swap
 {
+	int		stack_a_size;
 	t_stack	*min;
 	t_stack	*med;
 	t_stack	*max;
@@ -70,9 +70,7 @@ typedef struct push_swap
 }	t_values;
 
 void		ft_push(t_stack **head, TYPE value);
-void		ft_push_elem(t_stack **head, t_stack *elem);
 TYPE		ft_pop(t_stack **head);
-t_stack		*ft_pop_elem(t_stack **head);
 TYPE		ft_peak(const t_stack *head);
 void		ft_delete_stack(t_stack **head);
 int			ft_stack_size(t_stack *lst);
@@ -82,6 +80,10 @@ void		ft_check_isdigits(int argc, char **argv);
 void		ft_check_duplicates(t_stack **head);
 void		ft_error_msg(void);
 void		ft_free_all(t_values *vals);
+
+t_stack		*ft_pop_elem(t_stack **head);
+void		ft_push_elem(t_stack **head, t_stack *elem);
+void		ft_push_copy(t_stack **head, t_stack *elem);
 
 void		ft_sa(t_stack **head_a);
 void		ft_sb(t_stack **head_b);
@@ -133,5 +135,5 @@ void		ft_fill_tab(int *tab, t_stack *head);
 void		ft_set_index(t_stack *head);
 void		ft_sort_small_stack(t_values *vals);
 void		ft_radix_sort(t_values *vals);
-void	ft_print_stack(const t_stack *head);
+
 #endif

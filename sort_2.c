@@ -6,7 +6,7 @@
 /*   By: merlich <merlich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 22:10:44 by merlich           #+#    #+#             */
-/*   Updated: 2022/02/16 22:19:46 by merlich          ###   ########.fr       */
+/*   Updated: 2022/02/18 18:33:31 by merlich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,11 @@ void	ft_action_rb_rr(t_values *vals)
 
 void	ft_operation_parser(t_values *vals)
 {
-	if (vals->minimal->min_sum == vals->minimal->ra_rr)
+	if (vals->minimal->min_sum == vals->minimal->ra_rrb)
+		ft_action_ra_rrb(vals);
+	else if (vals->minimal->min_sum == vals->minimal->rb_rra)
+		ft_action_rb_rra(vals);
+	else if (vals->minimal->min_sum == vals->minimal->ra_rr)
 		ft_action_ra_rr(vals);
 	else if (vals->minimal->min_sum == vals->minimal->rb_rr)
 		ft_action_rb_rr(vals);
@@ -76,9 +80,5 @@ void	ft_operation_parser(t_values *vals)
 		ft_action_rra_rrr(vals);
 	else if (vals->minimal->min_sum == vals->minimal->rrb_rrr)
 		ft_action_rrb_rrr(vals);
-	else if (vals->minimal->min_sum == vals->minimal->ra_rrb)
-		ft_action_ra_rrb(vals);
-	else if (vals->minimal->min_sum == vals->minimal->rb_rra)
-		ft_action_rb_rra(vals);
 	ft_pa(&vals->head_a, &vals->head_b);
 }

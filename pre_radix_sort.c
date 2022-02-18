@@ -6,7 +6,7 @@
 /*   By: merlich <merlich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 18:04:35 by merlich           #+#    #+#             */
-/*   Updated: 2022/02/17 23:08:37 by merlich          ###   ########.fr       */
+/*   Updated: 2022/02/18 18:46:51 by merlich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_dec_to_bin(int dec)
 
 	k = 1;
 	bin = 0;
-	while(dec)
+	while (dec)
 	{
 		bin += (dec % 2) * k;
 		k *= 10;

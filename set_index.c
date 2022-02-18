@@ -6,7 +6,7 @@
 /*   By: merlich <merlich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 20:58:29 by merlich           #+#    #+#             */
-/*   Updated: 2022/02/17 23:23:14 by merlich          ###   ########.fr       */
+/*   Updated: 2022/02/18 18:38:57 by merlich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,8 +76,11 @@ void	ft_find_scores_sum(t_stack *elem)
 		elem->rrb_rrr = elem->rrb_new + elem->score_rrr;
 		elem->ra_rrb = elem->score_a_r + elem->score_b_rr;
 		elem->rb_rra = elem->score_b_r + elem->score_a_rr;
-		elem->min_sum = ft_min(ft_min(ft_max(elem->ra_rr, elem->rb_rr), ft_max(elem->rra_rrr, elem->rrb_rrr)), ft_min(elem->ra_rrb, elem->rb_rra));
-		// elem->min_sum = ft_nonzero_min(ft_nonzero_min(ft_nonzero_min(elem->ra_rr, elem->rb_rr), elem->ra_rrb), ft_nonzero_min(ft_nonzero_min(elem->rra_rrr, elem->rrb_rrr), elem->rb_rra));
+		elem->min_sum = ft_min(\
+		ft_min(\
+		ft_max(elem->ra_rr, elem->rb_rr), \
+		ft_max(elem->rra_rrr, elem->rrb_rrr)), \
+		ft_min(elem->ra_rrb, elem->rb_rra));
 		elem = elem->next;
 	}
 }
