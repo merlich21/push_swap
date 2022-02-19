@@ -6,7 +6,7 @@
 /*   By: merlich <merlich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 19:11:46 by merlich           #+#    #+#             */
-/*   Updated: 2022/02/18 19:30:12 by merlich          ###   ########.fr       */
+/*   Updated: 2022/02/19 13:16:04 by merlich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,7 @@ static void	ft_fill_stacks(t_values *vals)
 {
 	while (vals->head_a && ft_stack_size(vals->head_a) != 3)
 	{
-		if (vals->head_a->value == vals->min->value || \
-			vals->head_a->value == vals->med->value || \
-			vals->head_a->value == vals->max->value)
+		if (vals->head_a->value == vals->max->value)
 		{
 			ft_ra(&vals->head_a);
 		}
