@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: merlich <merlich@student.21-school.ru>     +#+  +:+       +#+        */
+/*   By: merlich <merlich@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 16:16:03 by merlich           #+#    #+#             */
-/*   Updated: 2021/10/20 14:26:36 by merlich          ###   ########.fr       */
+/*   Updated: 2022/02/21 18:42:01 by merlich          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,17 @@ static void	ft_trim_begin(char const *s1, char const *set, size_t *min)
 {
 	size_t	i;	
 	size_t	j;
+	size_t	len_s1;
+	size_t	len_set;
 
 	i = 0;
 	j = 0;
-	while ((i <= ft_strlen(s1)) && (j < ft_strlen(set)))
+	len_s1 = ft_strlen(s1);
+	len_set = ft_strlen(set);
+	while ((i <= len_s1) && (j < len_set))
 	{
 		j = 0;
-		while (j < ft_strlen(set))
+		while (j < len_set)
 		{
 			if (s1[i] == set[j])
 			{
@@ -40,13 +44,15 @@ static void	ft_trim_end(char const *s1, char const *set, size_t *max)
 {
 	size_t	i;	
 	size_t	j;
+	size_t	len_set;
 
 	i = ft_strlen(s1) - 1;
 	j = 0;
-	while ((i) && (j < ft_strlen(set)))
+	len_set = ft_strlen(set);
+	while ((i) && (j < len_set))
 	{
 		j = 0;
-		while (j < ft_strlen(set))
+		while (j < len_set)
 		{
 			if (s1[i] == set[j])
 			{
